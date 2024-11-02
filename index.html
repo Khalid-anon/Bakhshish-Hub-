@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝑩𝒂𝒌𝒉𝒔𝒉𝒊𝒔𝒉 𝑯𝒖𝒃</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>𝑩𝒂𝒌𝒉𝒔𝒉𝒊𝒔𝒉 𝑯𝒖𝒃</h1>
+      <p>Your Zakat & Charity Companion</p>
+    </header>
+    <main>
+      <!-- Currency Selector -->
+      <section id="currencySelector">
+        <label for="currency">Select Currency:</label>
+        <select id="currency" onchange="updateCurrency()">
+          <option value="USD" selected>USD ($)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="AUD">AUD (A$)</option>
+          <option value="IDR">IDR (Rp)</option>
+          <option value="INR">INR (₹)</option>
+          <option value="PKR">PKR (₨)</option>
+          <option value="QAR">QAR (﷼)</option>
+          <!-- Add your currencies as needed -->
+        </select>
+      </section>
+      
+      <!-- Zakat Calculator Section -->
+      <section id="zakatCalculator">
+        <h2>Zakat Calculator</h2>
+        <form id="zakatForm">
+          <label for="cashSavings">Cash & Bank Savings:</label>
+          <input type="number" id="cashSavings" placeholder="Enter amount">
+          <label for="goldSilver">Gold & Silver:</label>
+          <input type="number" id="goldSilver" placeholder="Enter amount">
+          <label for="investments">Investments (shares, property):</label>
+          <input type="number" id="investments" placeholder="Enter amount">
+          <label for="otherWealth">Other Wealth (livestock, crops):</label>
+          <input type="number" id="otherWealth" placeholder="Enter amount">
+          <button type="button" onclick="calculateZakat()">Calculate Zakat</button>
+        </form>
+        <p id="zakatResult">Your Zakat payable is $0.00</p>
+      </section>
+
+      <!-- Charity Tracker Section -->
+      <section id="charityTracker">
+        <h2>Charity Tracker</h2>
+        <form id="donationForm">
+          <label for="donationAmount">Donation Amount:</label>
+          <input type="number" id="donationAmount" placeholder="Enter amount">
+          <label for="donationType">Donation Type:</label>
+          <select id="donationType">
+            <option value="Zakat">Zakat</option>
+            <option value="Sadaqah">Sadaqah</option>
+            <option value="Other">Other</option>
+          </select>
+          <button type="button" onclick="addDonation()">Add Donation</button>
+        </form>
+        <ul id="donationHistory"></ul>
+        <button id="clearDonationsButton" onclick="clearDonations()">Clear All Donations</button>
+        <canvas id="charityChart"></canvas>
+      </section>
+      
+      <!-- Sadaqah Tips Section -->
+      <section id="sadaqahTips">
+        <h2>Reminder</h2>
+        <p id="charityTip">Be kind to your neighbors. Helping them is an act of charity.</p>
+      </section>
+      
+      <!-- Charity Opportunities Section -->
+      <section id="charityOpportunities">
+        <h2>Charity Opportunities</h2>
+        <ul>
+          <li><a href="https://www.islamic-relief.org" target="_blank">Islamic Relief</a></li>
+          <li><a href="https://www.pennyappeal.org" target="_blank">Penny Appeal</a></li>
+          <li><a href="https://www.zakat.org" target="_blank">Zakat Foundation</a></li>
+        </ul>
+      </section>
+    </main>
+    
+    <footer>
+      <p>© 2024 𝑩𝒂𝒌𝒉𝒔𝒉𝒊𝒔𝒉 𝑯𝒖𝒃</p>
+    </footer>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
